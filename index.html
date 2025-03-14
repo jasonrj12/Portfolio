@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jason's Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-     <link rel="icon" href="RJ.png" type="image/x-icon">
+    <link rel="icon" href="RJ.png" type="image/x-icon">
     <style>
         :root {
             --primary: #0077ff;
@@ -235,6 +235,16 @@
             opacity: 0.8;
             margin-bottom: 2rem;
             max-width: 80%;
+        }
+
+        .hero-content .mobile-name {
+            display: none; /* Hidden by default on desktop */
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(0, 0, 0, 0.7);
+            margin-bottom: 1rem;
         }
 
         .hero-image {
@@ -801,6 +811,9 @@
             .theme-toggle {
                 margin-left: 0;
             }
+            .hero-content .mobile-name {
+                display: block; /* Show the mobile name on mobile */
+            }
             .skills-section h2 {
                 font-size: 2rem;
             }
@@ -955,7 +968,9 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>RENISH JASON</h1>
+            <h2 class="mobile-name">Renish Jason</h2> <!-- Added for mobile view -->
             <p>Mystery is at the heart of creativity. That, and surprise.</p>
+           
             <a href="#about" class="btn btn-more"><i class="fas fa-arrow-alt-circle-down"></i>More</a>
         </div>
         <div class="hero-image">

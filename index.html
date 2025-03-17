@@ -450,7 +450,246 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+/* New Statistics Section */
+.stats-section {
+    background: #233150; /* Dark purple background */
+    padding: 0.5rem 0.25rem; /* Compact padding */
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 0.25rem; /* Tight gap */
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 60px; /* Minimum height for desktop */
+}
 
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0.25rem; /* Slight padding for spacing */
+}
+
+.stat-item i {
+    font-size: 1.2rem; /* Base icon size */
+    margin-bottom: 0.1rem; /* Minimal margin */
+    color: #ffffff;
+}
+
+.stat-number {
+    font-size: 1.5rem; /* Base font size */
+    font-weight: bold;
+    margin-bottom: 0.1rem; /* Minimal margin */
+    color: #ffffff;
+}
+
+.stat-label {
+    font-size: 0.7rem; /* Base font size for label */
+    opacity: 0.8;
+    color: #ffffff;
+    line-height: 1; /* Tight line spacing */
+}
+
+/* Animation for counter */
+.counter {
+    animation: countUp 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Mobile Screens */
+
+/* Medium mobile screens (480px to 767px) */
+@media (max-width: 767px) {
+    .stats-section {
+        flex-direction: column; /* Stack items vertically */
+        padding: 0.25rem 0.25rem; /* Reduced padding */
+        min-height: auto; /* Let content define height */
+    }
+
+    .stat-item {
+        margin-bottom: 0.25rem; /* Reduced spacing between items */
+        flex-basis: 100%; /* Full width on mobile */
+    }
+
+    .stat-item i {
+        font-size: 1.1rem; /* Slightly smaller icon */
+    }
+
+    .stat-number {
+        font-size: 1.3rem; /* Adjusted for medium mobile */
+    }
+
+    .stat-label {
+        font-size: 0.65rem; /* Adjusted for medium mobile */
+    }
+}
+
+/* Small mobile screens (360px to 479px) */
+@media (max-width: 479px) {
+    .stats-section {
+        padding: 0.2rem 0.2rem; /* Further reduced padding */
+        gap: 0.15rem; /* Tighter gap */
+    }
+
+    .stat-item {
+        margin-bottom: 0.2rem; /* Further reduced spacing */
+        padding: 0 0.15rem; /* Adjusted padding */
+    }
+
+    .stat-item i {
+        font-size: 1rem; /* Smaller icon */
+    }
+
+    .stat-number {
+        font-size: 1.1rem; /* Smaller number */
+    }
+
+    .stat-label {
+        font-size: 0.55rem; /* Smaller label */
+    }
+}
+
+/* Extra small mobile screens (below 360px) */
+@media (max-width: 359px) {
+    .stats-section {
+        padding: 0.15rem 0.1rem; /* Minimal padding */
+        gap: 0.1rem; /* Minimal gap */
+    }
+
+    .stat-item {
+        margin-bottom: 0.15rem; /* Minimal spacing */
+        padding: 0 0.1rem; /* Minimal padding */
+    }
+
+    .stat-item i {
+        font-size: 0.9rem; /* Very small icon */
+    }
+
+    .stat-number {
+        font-size: 0.9rem; /* Very small number */
+    }
+
+    .stat-label {
+        font-size: 0.5rem; /* Very small label */
+    }
+}
+
+/* Animation for counter */
+.counter {
+    animation: countUp 1.5s ease-out forwards; /* Faster animation */
+    opacity: 0;
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(5px); /* Reduced animation distance */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 767px) {
+    .stats-section {
+        flex-direction: column;
+        padding: 0.25rem 0.25rem; /* Further reduced padding */
+        min-height: 50px; /* Adjusted for mobile */
+    }
+
+    .stat-item {
+        margin-bottom: 0.25rem; /* Reduced margin */
+        flex-basis: 100%; /* Full width on mobile */
+    }
+
+    .stat-number {
+        font-size: 1.2rem; /* Adjusted for smaller screens */
+    }
+
+    .stat-label {
+        font-size: 0.6rem; /* Adjusted for smaller screens */
+    }
+}
+
+@media (max-width: 479px) {
+    .stats-section {
+        padding: 0.25rem 0.1rem; /* Even smaller padding */
+        min-height: 40px; /* Adjusted for extra small screens */
+    }
+
+    .stat-number {
+        font-size: 1rem; /* Further reduced */
+    }
+
+    .stat-label {
+        font-size: 0.5rem; /* Further reduced */
+    }
+
+    .stat-item i {
+        font-size: 1rem; /* Adjusted icon size */
+    }
+}
+/* Animation for counter */
+.counter {
+    animation: countUp 2s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 767px) {
+    .stats-section {
+        flex-direction: column;
+        padding: 1.5rem 0.5rem;
+    }
+
+    .stat-item {
+        margin-bottom: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 479px) {
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+}
         .skills-section h2 {
             display: flex;
             align-items: center;
@@ -1001,7 +1240,30 @@
             </div>
         </div>
     </section>
-
+    
+    <section class="stats-section">
+        <div class="stat-item">
+            <i class="fas fa-fire"></i>
+            <span class="stat-number counter" data-target="10">0</span>
+            <span class="stat-label">Projects completed</span>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-coffee"></i>
+            <span class="stat-number counter" data-target="5670">0</span>
+            <span class="stat-label">Cup of coffee</span>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-users"></i>
+            <span class="stat-number counter" data-target="10">0</span>
+            <span class="stat-label">Satisfied clients</span>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-award"></i>
+            <span class="stat-number counter" data-target="12">0</span>
+            <span class="stat-label">Nominees winner</span>
+        </div>
+    </section>
+    
     <section id="projects">
         <h2>PROJECTS</h2>
         <div class="project-grid">
@@ -1141,6 +1403,38 @@
                 }
             });
         });
+        // Counter animation
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200; // Speed of the counter (lower is faster)
+
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText.replace(/,/g, ''); // Remove commas for calculation
+            const increment = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment).toLocaleString();
+                setTimeout(updateCount, 1);
+            } else {
+                counter.innerText = target.toLocaleString(); // Ensure final value has commas
+            }
+        };
+
+        // Trigger the counter when the section is in view
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateCount();
+                    obs.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(counter);
+    });
+});
     </script>
 </body>
 </html>

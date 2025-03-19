@@ -138,7 +138,7 @@
 
         /* Mobile Menu Styles */
         .menu-toggle {
-            display: none; /* Hidden by default on desktop */
+            display: none;
             font-size: 1.5rem;
             background: none;
             border: none;
@@ -152,7 +152,7 @@
         }
 
         .nav-links.mobile-menu {
-            display: none; /* Hidden by default on mobile */
+            display: none;
             flex-direction: column;
             position: absolute;
             top: 70px;
@@ -165,7 +165,7 @@
         }
 
         .nav-links.mobile-menu.active {
-            display: flex; /* Show when active */
+            display: flex;
         }
 
         .nav-links.mobile-menu a {
@@ -183,7 +183,7 @@
 
         .hero {
             min-height: 100vh;
-            background: #d3d3d3; /* Gray background similar to the reference */
+            background: #d3d3d3;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -238,7 +238,7 @@
         }
 
         .hero-content .mobile-name {
-            display: none; /* Hidden by default on desktop */
+            display: none;
             font-size: 1.5rem;
             font-weight: bold;
             text-transform: uppercase;
@@ -271,12 +271,12 @@
             max-width: 100%;
             height: auto;
             object-fit: cover;
-            filter: grayscale(80%); /* Grayscale effect like the reference */
+            filter: grayscale(80%);
             transition: filter 0.3s ease;
         }
 
         .hero-image img:hover {
-            filter: grayscale(0%); /* Remove grayscale on hover */
+            filter: grayscale(0%);
         }
 
         .about-section {
@@ -286,7 +286,7 @@
             margin: 2rem auto;
             text-align: center;
             animation: fadeInUp 1s ease;
-            max-width: 800px; /* Center alignment with a max width */
+            max-width: 800px;
         }
 
         .about-section h2 {
@@ -381,7 +381,7 @@
             font-size: 1rem;
             position: relative;
             overflow: hidden;
-            border: 2px solid transparent; /* Border for the "More" button style */
+            border: 2px solid transparent;
         }
 
         .btn:hover {
@@ -408,7 +408,7 @@
         .btn-more {
             background: transparent;
             border: 2px solid rgba(0, 0, 0, 0.7);
-            color: rgba(0, 0, 0, 0.7);
+            color: rgba(00, 0, 0, 0.7);
             padding: 0.5rem 1.5rem;
             border-radius: 0;
             transition: background 0.3s ease, color 0.3s ease;
@@ -430,7 +430,7 @@
             display: block;
             position: relative;
             overflow: hidden;
-            max-width: 800px; /* Center alignment with a max width */
+            max-width: 800px;
         }
 
         .skills-section::before {
@@ -450,246 +450,64 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-/* New Statistics Section */
-.stats-section {
-    background: #233150; /* Dark purple background */
-    padding: 0.5rem 0.25rem; /* Compact padding */
-    text-align: center;
-    color: #ffffff;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 0.25rem; /* Tight gap */
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: 60px; /* Minimum height for desktop */
-}
 
-.stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 0.25rem; /* Slight padding for spacing */
-}
+        .stats-section {
+            background: #233150;
+            padding: 0.5rem 0.25rem;
+            text-align: center;
+            color: #ffffff;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 60px;
+        }
 
-.stat-item i {
-    font-size: 1.2rem; /* Base icon size */
-    margin-bottom: 0.1rem; /* Minimal margin */
-    color: #ffffff;
-}
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 0.25rem;
+        }
 
-.stat-number {
-    font-size: 1.5rem; /* Base font size */
-    font-weight: bold;
-    margin-bottom: 0.1rem; /* Minimal margin */
-    color: #ffffff;
-}
+        .stat-item i {
+            font-size: 1.2rem;
+            margin-bottom: 0.1rem;
+            color: #ffffff;
+        }
 
-.stat-label {
-    font-size: 0.7rem; /* Base font size for label */
-    opacity: 0.8;
-    color: #ffffff;
-    line-height: 1; /* Tight line spacing */
-}
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.1rem;
+            color: #ffffff;
+        }
 
-/* Animation for counter */
-.counter {
-    animation: countUp 1.5s ease-out forwards;
-    opacity: 0;
-}
+        .stat-label {
+            font-size: 0.7rem;
+            opacity: 0.8;
+            color: #ffffff;
+            line-height: 1;
+        }
 
-@keyframes countUp {
-    from {
-        opacity: 0;
-        transform: translateY(5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        .counter {
+            animation: countUp 1.5s ease-out forwards;
+            opacity: 0;
+        }
 
-/* Media Queries for Mobile Screens */
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* Medium mobile screens (480px to 767px) */
-@media (max-width: 767px) {
-    .stats-section {
-        flex-direction: column; /* Stack items vertically */
-        padding: 0.25rem 0.25rem; /* Reduced padding */
-        min-height: auto; /* Let content define height */
-    }
-
-    .stat-item {
-        margin-bottom: 0.25rem; /* Reduced spacing between items */
-        flex-basis: 100%; /* Full width on mobile */
-    }
-
-    .stat-item i {
-        font-size: 1.1rem; /* Slightly smaller icon */
-    }
-
-    .stat-number {
-        font-size: 1.3rem; /* Adjusted for medium mobile */
-    }
-
-    .stat-label {
-        font-size: 0.65rem; /* Adjusted for medium mobile */
-    }
-}
-
-/* Small mobile screens (360px to 479px) */
-@media (max-width: 479px) {
-    .stats-section {
-        padding: 0.2rem 0.2rem; /* Further reduced padding */
-        gap: 0.15rem; /* Tighter gap */
-    }
-
-    .stat-item {
-        margin-bottom: 0.2rem; /* Further reduced spacing */
-        padding: 0 0.15rem; /* Adjusted padding */
-    }
-
-    .stat-item i {
-        font-size: 1rem; /* Smaller icon */
-    }
-
-    .stat-number {
-        font-size: 1.1rem; /* Smaller number */
-    }
-
-    .stat-label {
-        font-size: 0.55rem; /* Smaller label */
-    }
-}
-
-/* Extra small mobile screens (below 360px) */
-@media (max-width: 359px) {
-    .stats-section {
-        padding: 0.15rem 0.1rem; /* Minimal padding */
-        gap: 0.1rem; /* Minimal gap */
-    }
-
-    .stat-item {
-        margin-bottom: 0.15rem; /* Minimal spacing */
-        padding: 0 0.1rem; /* Minimal padding */
-    }
-
-    .stat-item i {
-        font-size: 0.9rem; /* Very small icon */
-    }
-
-    .stat-number {
-        font-size: 0.9rem; /* Very small number */
-    }
-
-    .stat-label {
-        font-size: 0.5rem; /* Very small label */
-    }
-}
-
-/* Animation for counter */
-.counter {
-    animation: countUp 1.5s ease-out forwards; /* Faster animation */
-    opacity: 0;
-}
-
-@keyframes countUp {
-    from {
-        opacity: 0;
-        transform: translateY(5px); /* Reduced animation distance */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 767px) {
-    .stats-section {
-        flex-direction: column;
-        padding: 0.25rem 0.25rem; /* Further reduced padding */
-        min-height: 50px; /* Adjusted for mobile */
-    }
-
-    .stat-item {
-        margin-bottom: 0.25rem; /* Reduced margin */
-        flex-basis: 100%; /* Full width on mobile */
-    }
-
-    .stat-number {
-        font-size: 1.2rem; /* Adjusted for smaller screens */
-    }
-
-    .stat-label {
-        font-size: 0.6rem; /* Adjusted for smaller screens */
-    }
-}
-
-@media (max-width: 479px) {
-    .stats-section {
-        padding: 0.25rem 0.1rem; /* Even smaller padding */
-        min-height: 40px; /* Adjusted for extra small screens */
-    }
-
-    .stat-number {
-        font-size: 1rem; /* Further reduced */
-    }
-
-    .stat-label {
-        font-size: 0.5rem; /* Further reduced */
-    }
-
-    .stat-item i {
-        font-size: 1rem; /* Adjusted icon size */
-    }
-}
-/* Animation for counter */
-.counter {
-    animation: countUp 2s ease-out forwards;
-    opacity: 0;
-}
-
-@keyframes countUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 767px) {
-    .stats-section {
-        flex-direction: column;
-        padding: 1.5rem 0.5rem;
-    }
-
-    .stat-item {
-        margin-bottom: 1.5rem;
-    }
-
-    .stat-number {
-        font-size: 2rem;
-    }
-
-    .stat-label {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 479px) {
-    .stat-number {
-        font-size: 1.5rem;
-    }
-
-    .stat-label {
-        font-size: 0.8rem;
-    }
-}
         .skills-section h2 {
             display: flex;
             align-items: center;
@@ -823,6 +641,7 @@
             opacity: 0;
             animation: fadeInUp 1s ease forwards;
             animation-delay: calc(var(--delay) * 0.3s);
+            cursor: pointer; /* Indicate the card is clickable */
         }
 
         .project-card:nth-child(1) { --delay: 1; }
@@ -855,6 +674,62 @@
         }
 
         .project-card:hover h3 {
+            color: var(--primary);
+        }
+
+        /* Modal Styles for Project Preview */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content h3 {
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .modal-content p {
+            color: var(--text);
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 2rem;
+            color: var(--text);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
             color: var(--primary);
         }
 
@@ -1051,7 +926,7 @@
                 margin-left: 0;
             }
             .hero-content .mobile-name {
-                display: block; /* Show the mobile name on mobile */
+                display: block;
             }
             .skills-section h2 {
                 font-size: 2rem;
@@ -1116,6 +991,10 @@
             .about-item {
                 width: 180px;
             }
+            .modal-content {
+                width: 90%;
+                margin: 10% auto;
+            }
         }
 
         /* Extra small screens (below 480px) */
@@ -1173,6 +1052,80 @@
                 width: 160px;
             }
         }
+
+        /* Media Queries for Stats Section */
+        @media (max-width: 767px) {
+            .stats-section {
+                flex-direction: column;
+                padding: 0.25rem 0.25rem;
+                min-height: auto;
+            }
+
+            .stat-item {
+                margin-bottom: 0.25rem;
+                flex-basis: 100%;
+            }
+
+            .stat-item i {
+                font-size: 1.1rem;
+            }
+
+            .stat-number {
+                font-size: 1.3rem;
+            }
+
+            .stat-label {
+                font-size: 0.65rem;
+            }
+        }
+
+        @media (max-width: 479px) {
+            .stats-section {
+                padding: 0.2rem 0.2rem;
+                gap: 0.15rem;
+            }
+
+            .stat-item {
+                margin-bottom: 0.2rem;
+                padding: 0 0.15rem;
+            }
+
+            .stat-item i {
+                font-size: 1rem;
+            }
+
+            .stat-number {
+                font-size: 1.1rem;
+            }
+
+            .stat-label {
+                font-size: 0.55rem;
+            }
+        }
+
+        @media (max-width: 359px) {
+            .stats-section {
+                padding: 0.15rem 0.1rem;
+                gap: 0.1rem;
+            }
+
+            .stat-item {
+                margin-bottom: 0.15rem;
+                padding: 0 0.1rem;
+            }
+
+            .stat-item i {
+                font-size: 0.9rem;
+            }
+
+            .stat-number {
+                font-size: 0.9rem;
+            }
+
+            .stat-label {
+                font-size: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1207,9 +1160,8 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>RENISH JASON</h1>
-            <h2 class="mobile-name">Renish Jason</h2> <!-- Added for mobile view -->
+            <h2 class="mobile-name">Renish Jason</h2>
             <p>Mystery is at the heart of creativity. That, and surprise.</p>
-           
             <a href="#about" class="btn btn-more"><i class="fas fa-arrow-alt-circle-down"></i>More</a>
         </div>
         <div class="hero-image">
@@ -1267,7 +1219,7 @@
     <section id="projects">
         <h2>PROJECTS</h2>
         <div class="project-grid">
-            <div class="project-card">
+            <div class="project-card" data-project="gym">
                 <h3>Gym Website Development</h3>
                 <p>A user-friendly platform for customers to submit and view reviews. Features include:
                 <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
@@ -1276,10 +1228,9 @@
                     <li>✅ <strong>Star Rating System</strong> – Easy-to-read visual ratings.</li>
                     <li>✅ <strong>Secure Storage</strong> – Handled via PHP & MySQL.</li>
                 </ul>
-                    
                     Built with HTML, CSS, JavaScript, PHP, and MySQL for smooth performance! 🚀</p>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-project="pharmacy">
                 <h3>Pharmacy Website Development</h3>
                 <p style="line-height: 1.8; margin: 0; padding: 0; text-align: left;">
                     <strong>HealthPlus Pharmacy – Website Overview</strong><br>
@@ -1294,7 +1245,7 @@
                     </ul>
                 </p>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-project="hospital">
                 <h3>Hospital Website Development</h3>
                 <p style="line-height: 1.8; margin: 0; padding: 0; text-align: left;">
                     <strong>Care Compass - Smart Healthcare Platform</strong><br>
@@ -1313,6 +1264,16 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal for Project Preview -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h3 id="modal-title"></h3>
+            <img id="modal-image" src="" alt="Project preview">
+            <p id="modal-description"></p>
+        </div>
+    </div>
     
     <section id="skills" class="skills-section">
         <h2>SKILLS</h2>
@@ -1396,45 +1357,92 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
-                // Close mobile menu when a link is clicked
                 const mobileMenu = document.querySelector('.nav-links.mobile-menu');
                 if (mobileMenu.classList.contains('active')) {
                     mobileMenu.classList.remove('active');
                 }
             });
         });
+
         // Counter animation
-document.addEventListener('DOMContentLoaded', () => {
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200; // Speed of the counter (lower is faster)
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
 
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText.replace(/,/g, ''); // Remove commas for calculation
-            const increment = target / speed;
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText.replace(/,/g, '');
+                    const increment = target / speed;
 
-            if (count < target) {
-                counter.innerText = Math.ceil(count + increment).toLocaleString();
-                setTimeout(updateCount, 1);
-            } else {
-                counter.innerText = target.toLocaleString(); // Ensure final value has commas
-            }
-        };
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment).toLocaleString();
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target.toLocaleString();
+                    }
+                };
 
-        // Trigger the counter when the section is in view
-        const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    updateCount();
-                    obs.unobserve(entry.target); // Stop observing once animated
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCount();
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                observer.observe(counter);
+            });
+
+            // Project Modal Functionality
+            const modal = document.getElementById('project-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalImage = document.getElementById('modal-image');
+            const modalDescription = document.getElementById('modal-description');
+            const closeBtn = document.querySelector('.close');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            const projectData = {
+                gym: {
+                    title: 'Gym Website Development',
+                    image: 'gym.jpg', 
+                    description: 'A user-friendly platform for customers to submit and view reviews. Features include review submission, dynamic display, star rating system, and secure storage using PHP & MySQL.'
+                },
+                pharmacy: {
+                    title: 'Pharmacy Website Development',
+                    image: 'pharmacy .jpg', 
+                    description: 'HealthPlus Pharmacy offers online pharmacy services, consultation booking, medication management, immunization, health screenings, compounding services, and a user-friendly design.'
+                },
+                hospital: {
+                    title: 'Hospital Website Development',
+                    image: 'hospital.jpg', 
+                    description: 'Care Compass is a smart healthcare platform with doctor and patient logins, secure authentication, doctor dashboard, patient portal, and mobile-friendly design.'
+                }
+            };
+
+            projectCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const project = card.getAttribute('data-project');
+                    const data = projectData[project];
+                    modalTitle.textContent = data.title;
+                    modalImage.src = data.image;
+                    modalImage.alt = `${data.title} preview`;
+                    modalDescription.textContent = data.description;
+                    modal.style.display = 'block';
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
                 }
             });
-        }, { threshold: 0.5 });
-
-        observer.observe(counter);
-    });
-});
+        });
     </script>
 </body>
 </html>

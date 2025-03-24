@@ -228,7 +228,8 @@
 
         .hero {
             min-height: 100vh;
-            background: #d3d3d3;
+            min-width: 100%;
+            background: #10101a;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -251,7 +252,7 @@
         .hero-content {
             flex: 1;
             min-width: 300px;
-            color: rgba(0, 0, 0, 0.7);
+            color: rgb(255, 255, 255);
             text-align: left;
             animation: slideInLeft 1s ease-out;
         }
@@ -452,8 +453,8 @@
 
         .btn-more {
             background: transparent;
-            border: 2px solid rgba(0, 0, 0, 0.7);
-            color: rgba(0, 0, 0, 0.7); /* Fixed typo in color value */
+            border: 2px solid rgb(255, 255, 255);
+            color: rgba(255, 255, 255, 0.881); /* Fixed typo in color value */
             padding: 0.5rem 1.5rem;
             border-radius: 0;
             transition: background 0.3s ease, color 0.3s ease;
@@ -1170,6 +1171,71 @@
                 font-size: 0.5rem;
             }
         }
+          .animated-name {
+                    display: inline-block;
+                    font-size: 4rem;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    background: linear-gradient(90deg, #e4187e, #760bda, #0b34ec);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    background-size: 200% auto;
+                    background-position: 0% 50%;
+                    -webkit-text-fill-color: transparent;
+                    animation: gradientMove 13s infinite linear, letterColor 13s infinite linear;
+                }
+
+                @keyframes gradientMove {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    100% {
+                        background-position: 200% 50%;
+                    }
+                }
+
+                @keyframes letterColor {
+                    0%, 100% {
+                        filter: hue-rotate(0deg);
+                    }
+                    50% {
+                        filter: hue-rotate(360deg);
+                    }
+                }
+                
+                .mobile-name {
+                    display: inline-block;
+                    font-size: 4rem;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    background: linear-gradient(90deg, #e62988, #8319e6, #0b34ec);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    background-size: 200% auto;
+                    background-position: 0% 50%;
+                    -webkit-text-fill-color: transparent;
+                    animation: gradientMove 13s infinite linear, letterColor 13s infinite linear;
+                }
+
+                @keyframes gradientMove {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    100% {
+                        background-position: 200% 50%;
+                    }
+                }
+
+                @keyframes letterColor {
+                    0%, 100% {
+                        filter: hue-rotate(0deg);
+                    }
+                    50% {
+                        filter: hue-rotate(360deg);
+                    }
+                }
     </style>
 </head>
 <body>
@@ -1203,9 +1269,9 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>RENISH JASON</h1>
+            <h1 class="animated-name">RENISH JASON</h1>
             <h2 class="mobile-name">Renish Jason</h2>
-            <p>Mystery is at the heart of creativity. That, and surprise.</p>
+            <p><strong>Creativity is intelligence having fun.</strong></p>
             <a href="#about" class="btn btn-more"><i class="fas fa-arrow-alt-circle-down"></i>More</a>
         </div>
         <div class="hero-image">
@@ -1360,7 +1426,10 @@
             <button type="submit" class="btn"><i class="fas fa-paper-plane"></i>Send Message</button>
         </form>
     </section>
-
+    <button id="goTopBtn" style="display: none; position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 1.5rem; cursor: pointer; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);">
+        ↑
+    </button>
+  
     <footer style="background: var(--card-bg); color: var(--text); text-align: center; padding: 2rem; margin-top: 2rem;">
         <p>© 2025 Renish Jason. All rights reserved.</p>
         <div style="margin-top: 1rem;">
@@ -1487,6 +1556,23 @@
                 }
             });
         });
+        
+        const goTopBtn = document.getElementById('goTopBtn');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        goTopBtn.style.display = 'block';
+    } else {
+        goTopBtn.style.display = 'none';
+    }
+});
+
+goTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
     </script>
 </body>
 </html>

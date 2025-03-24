@@ -139,16 +139,61 @@
         /* Mobile Menu Styles */
         .menu-toggle {
             display: none;
-            font-size: 1.5rem;
             background: none;
             border: none;
             cursor: pointer;
             color: var(--text);
             transition: color 0.3s ease;
+            position: relative;
+            width: 30px;
+            height: 20px;
         }
 
         .menu-toggle:hover {
             color: var(--primary);
+        }
+
+        /* Hamburger Icon (Three Lines) */
+        .menu-toggle .hamburger {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--text);
+            position: relative;
+            transition: background 0.3s ease;
+        }
+
+        .menu-toggle .hamburger::before,
+        .menu-toggle .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 3px;
+            background: var(--text);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle .hamburger::before {
+            top: -8px;
+        }
+
+        .menu-toggle .hamburger::after {
+            top: 8px;
+        }
+
+        /* Transform to "X" when menu is active */
+        .menu-toggle.active .hamburger {
+            background: transparent;
+        }
+
+        .menu-toggle.active .hamburger::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+
+        .menu-toggle.active .hamburger::after {
+            transform: rotate(-45deg);
+            top: 0;
         }
 
         .nav-links.mobile-menu {
@@ -408,7 +453,7 @@
         .btn-more {
             background: transparent;
             border: 2px solid rgba(0, 0, 0, 0.7);
-            color: rgba(00, 0, 0, 0.7);
+            color: rgba(0, 0, 0, 0.7); /* Fixed typo in color value */
             padding: 0.5rem 1.5rem;
             border-radius: 0;
             transition: background 0.3s ease, color 0.3s ease;
@@ -641,7 +686,7 @@
             opacity: 0;
             animation: fadeInUp 1s ease forwards;
             animation-delay: calc(var(--delay) * 0.3s);
-            cursor: pointer; /* Indicate the card is clickable */
+            cursor: pointer;
         }
 
         .project-card:nth-child(1) { --delay: 1; }
@@ -677,7 +722,6 @@
             color: var(--primary);
         }
 
-        /* Modal Styles for Project Preview */
         .modal {
             display: none;
             position: fixed;
@@ -1136,7 +1180,7 @@
                 <h2>RENISH JASON</h2>
             </div>
             <button class="menu-toggle" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
+                <span class="hamburger"></span>
             </button>
             <div class="nav-links">
                 <a href="#home"><i class="fas fa-home"></i> Home</a>
@@ -1265,7 +1309,6 @@
         </div>
     </section>
 
-    <!-- Modal for Project Preview -->
     <div id="project-modal" class="modal">
         <div class="modal-content">
             <span class="close">×</span>
@@ -1343,7 +1386,9 @@
 
         function toggleMobileMenu() {
             const mobileMenu = document.querySelector('.nav-links.mobile-menu');
+            const menuToggle = document.querySelector('.menu-toggle');
             mobileMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active'); // Add/remove active class to toggle hamburger to "X"
         }
 
         const savedTheme = localStorage.getItem('theme');
@@ -1360,11 +1405,11 @@
                 const mobileMenu = document.querySelector('.nav-links.mobile-menu');
                 if (mobileMenu.classList.contains('active')) {
                     mobileMenu.classList.remove('active');
+                    document.querySelector('.menu-toggle').classList.remove('active');
                 }
             });
         });
 
-        // Counter animation
         document.addEventListener('DOMContentLoaded', () => {
             const counters = document.querySelectorAll('.counter');
             const speed = 200;
@@ -1395,7 +1440,6 @@
                 observer.observe(counter);
             });
 
-            // Project Modal Functionality
             const modal = document.getElementById('project-modal');
             const modalTitle = document.getElementById('modal-title');
             const modalImage = document.getElementById('modal-image');
@@ -1406,17 +1450,17 @@
             const projectData = {
                 gym: {
                     title: 'Gym Website Development',
-                    image: 'gym.jpg', 
+                    image: 'gym.jpg',
                     description: 'A user-friendly platform for customers to submit and view reviews. Features include review submission, dynamic display, star rating system, and secure storage using PHP & MySQL.'
                 },
                 pharmacy: {
                     title: 'Pharmacy Website Development',
-                    image: 'pharmacy .jpg', 
+                    image: 'pharmacy.jpg', // Fixed space in filename
                     description: 'HealthPlus Pharmacy offers online pharmacy services, consultation booking, medication management, immunization, health screenings, compounding services, and a user-friendly design.'
                 },
                 hospital: {
                     title: 'Hospital Website Development',
-                    image: 'hospital.jpg', 
+                    image: 'hospital.jpg',
                     description: 'Care Compass is a smart healthcare platform with doctor and patient logins, secure authentication, doctor dashboard, patient portal, and mobile-friendly design.'
                 }
             };

@@ -1283,8 +1283,9 @@
     <section id="about" class="about-section">
         <h2>About Me</h2>
         <p>
-            Hi, I'm Renish Jason, a passionate Web Developer with a knack for creating innovative solutions and amazing user experiences. I specialize in designing user-friendly and responsive websites, focusing on aesthetics, usability, and modern design trends. With skills in Graphic Design, Web Design, and HTML, I bring creativity and technical expertise to every project I undertake.
+            <span id="typing-animation"></span>
         </p>
+        
         <div class="about-details">
             <div class="about-item">
                 <i class="fas fa-code"></i>
@@ -1466,7 +1467,9 @@
     <button id="goTopBtn" style="display: none; position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 1.5rem; cursor: pointer; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);">
         ↑
     </button>
-  
+ 
+    
+
     <footer style="background: var(--card-bg); color: var(--text); text-align: center; padding: 2rem; margin-top: 2rem;">
         <p>© 2025 Renish Jason. All rights reserved.</p>
         <div style="margin-top: 1rem;">
@@ -1478,6 +1481,20 @@
     </footer>
 
     <script>
+          const text = "Hi, I'm Renish Jason, a passionate Web Developer with a knack for creating innovative solutions and amazing user experiences. I specialize in designing user-friendly and responsive websites, focusing on aesthetics, usability, and modern design trends. With skills in Graphic Design, Web Design, and HTML, I bring creativity and technical expertise to every project I undertake.";
+                const typingElement = document.getElementById('typing-animation');
+                let index = 0;
+
+                function typeText() {
+                    if (index < text.length) {
+                        typingElement.textContent += text.charAt(index);
+                        index++;
+                        setTimeout(typeText, 15); 
+                    }
+                }
+
+                typeText();
+            
         function toggleTheme() {
             const body = document.body;
             const currentTheme = body.getAttribute('data-theme');

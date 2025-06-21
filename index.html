@@ -1272,7 +1272,12 @@
         <div class="hero-content">
             <h1 class="animated-name">RENISH JASON</h1>
             <h2 class="mobile-name">RENISH JASON</h2>
-            <p><strong>Creativity is intelligence having fun.</strong></p>
+            <div style="margin-bottom: 1.5rem;">
+                <span style="font-size: 1.3rem; font-weight: 500; color: #fff;">I'm a&nbsp;</span>
+                <span class="flip-profession" style="display: inline-block; min-width: 180px; font-size: 1.3rem; font-weight: bold; color: #ffd700; vertical-align: middle;">
+                    <span id="flip-text">Web Developer</span>
+                </span>
+            </div>
             <a href="#about" class="btn btn-more"><i class="fas fa-arrow-alt-circle-down"></i>More</a>
         </div>
         <div class="hero-image">
@@ -1298,9 +1303,9 @@
                 <p>Creating visually appealing designs and branding.</p>
             </div>
             <div class="about-item">
-                <i class="fas fa-lightbulb"></i>
-                <h3>Problem Solver</h3>
-                <p>Finding innovative solutions to complex challenges.</p>
+                <i class="fas fa-pencil-ruler"></i>
+                <h3>UI/UX Design</h3>
+                <p>Designing intuitive and engaging user interfaces for seamless user experiences.</p>
             </div>
         </div>
     </section>
@@ -1403,7 +1408,7 @@
                 <p>Skilled in creating visually appealing designs, logos, and branding materials using tools like Adobe Photoshop and Illustrator.</p>
                 <div class="skill-bar-container">
                     <div class="skill-bar graphic">
-                        <span class="skill-percentage">48%</span>
+                        <span class="skill-percentage">50%</span>
                     </div>
                 </div>
             </div>
@@ -1421,7 +1426,7 @@
                 <p>Experienced in building structured, semantic, and accessible web content using HTML5 to create robust website foundations.</p>
                 <div class="skill-bar-container">
                     <div class="skill-bar html">
-                        <span class="skill-percentage">74%</span>
+                        <span class="skill-percentage">80%</span>
                     </div>
                 </div>
             </div>
@@ -1430,7 +1435,7 @@
                 <p>Proficient in server-side scripting and building dynamic, data-driven web applications using PHP.</p>
                 <div class="skill-bar-container">
                     <div class="skill-bar" style="background: #6c757d; --width: 70%;">
-                        <span class="skill-percentage">70%</span>
+                        <span class="skill-percentage">75%</span>
                     </div>
                 </div>
             </div>
@@ -1470,6 +1475,7 @@
  
     
 
+    <footer style="background: var(--card-bg); color: var(--text); text-align: center; padding: 2rem; margin-top: 2rem;">
     <footer style="background: var(--card-bg); color: var(--text); text-align: center; padding: 2rem; margin-top: 2rem;">
         <p>© 2025 Renish Jason. All rights reserved.</p>
         <div style="margin-top: 1rem;">
@@ -1627,6 +1633,31 @@ goTopBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
+
+ // Flipping professions animation
+                const professions = [
+                    "Web Developer",
+                    "Graphic Designer",
+                    "UI/UX Designer",
+                ];
+                let flipIndex = 0;
+                const flipText = document.getElementById('flip-text');
+                flipText.style.transition = "transform 0.5s, opacity 0.5s";
+                setInterval(() => {
+                    flipIndex = (flipIndex + 1) % professions.length;
+                    if (flipText) {
+                        flipText.style.transform = "rotateX(90deg)";
+                        flipText.style.opacity = 0;
+                        setTimeout(() => {
+                            flipText.textContent = professions[flipIndex];
+                            flipText.style.transform = "rotateX(0deg)";
+                            flipText.style.opacity = 1;
+                        }, 350);
+                    }
+                }, 1800);
     </script>
 </body>
 </html>
